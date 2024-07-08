@@ -1,4 +1,4 @@
-Description=IBM Domino Server
+Description=HCL Domino Server
 After=syslog.target network.target
 
 [Service]
