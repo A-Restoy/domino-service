@@ -1,0 +1,17 @@
+Description=IBM Domino Server
+After=syslog.target network.target
+
+[Service]
+Type=simple
+User=admnotes
+Group=admnotes
+WorkingDirectory=/local/notesdata
+LimitNOFILE=60000
+ExecStart=/bin/bash /opt/hcl/domino/bin/server start
+ExecStop=/bin/bash /opt/hcl/domino/bin/server stop
+TimeoutSec=300
+KillMode=process
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
